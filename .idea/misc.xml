@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/wheri/f22hopper/app/src/main/res/layout/activity_add_employee.xml" value="0.11752786220871327" />
+        <entry key="..\:/Users/wheri/f22hopper/app/src/main/res/layout/activity_emoployee_info.xml" value="0.22" />
+        <entry key="..\:/Users/wheri/f22hopper/app/src/main/res/layout/activity_schedule.xml" value="0.22" />
+        <entry key="..\:/Users/wheri/f22hopper/app/src/main/res/layout/activity_week_view.xml" value="0.11752786220871327" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/drawable-anydpi/color_sched_icon.xml" value="0.127" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/drawable-anydpi/color_unsched_icon.xml" value="0.127" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/drawable-anydpi/ic_moon.xml" value="0.127" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/drawable/color_orange.xml" value="0.127" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/layout/activity_add_employee.xml" value="0.5" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/layout/activity_delete_employee.xml" value="0.12907608695652173" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/layout/activity_edit_employee.xml" value="0.3333333333333333" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/layout/activity_emoployee_info.xml" value="0.5" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/layout/activity_employee_list.xml" value="0.36666666666666664" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/layout/activity_schedule.xml" value="0.28929068150208626" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/layout/activity_settings.xml" value="0.36666666666666664" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/layout/activity_week_view.xml" value="0.4074074074074074" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/layout/calendar_cell.xml" value="0.36666666666666664" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/layout/hour_cell.xml" value="0.2" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/layout/main_nav_drawer.xml" value="0.13796296296296295" />
+        <entry key="..\:/git/f22hopper/app/src/main/res/layout/main_toolbar.xml" value="0.36666666666666664" />
+        <entry key="app/src/main/res/layout/activity_emoployee_info.xml" value="0.3177083333333333" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.17325227963525835" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.36666666666666664" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

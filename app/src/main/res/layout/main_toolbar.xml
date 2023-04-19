@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--this whole thing is for the top layer-->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="60dp"
+    android:orientation="horizontal"
+    android:padding = "0dp"
+    android:background="@color/Cornflower"
+    android:layout_gravity="center_horizontal">
+    <!--the padding above is for how far it is from the top-->
+    <!--this is the menu icon that can be clicked-->
+
+    <!--this is for the top title-->
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="6dp"
+        android:layout_weight="0"
+        android:onClick="clickMenu"
+        android:src="@drawable/menu_icon" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="10dp"
+        android:layout_weight="1"
+        android:background="#F4B942"
+        android:padding="3dp"
+        android:text="Hopper Schedule Manager"
+        android:textAlignment="center"
+        android:textColor="#EFF2F1"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+
+</LinearLayout>

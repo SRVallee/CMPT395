@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--this is for the navigation drawer page-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Cornflower_60"
+    android:orientation="vertical">
+
+    <!--this is for the profile on click-->
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="match_parent"
+        android:onClick="ClickLogo"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/grasshopper_icon_v2" />
+
+
+    <!--this is the text underneath the profile-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/hopper_schedule_manager"
+        android:textAlignment="center"
+        android:textColor="@color/eggshell"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <!--this is for the line dividing the top to the bottom the blue line-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="17dp"
+        android:background="@color/amber_60" />
+
+    <!--this is the home button on the screen-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/border_corn120"
+        android:gravity="center_vertical"
+        android:onClick="clickHome"
+        android:orientation="horizontal">
+
+        <!--the padding in TextView is for how far it is from the side
+        this is also the home on the page-->
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="Home"
+            android:textColor="@color/eggshell"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="50dp"
+            android:src="@drawable/home_icon" />
+
+
+    </LinearLayout>
+
+    <!--this is the button for the dashboard can copy and past to make more buttons-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/border_corn120"
+        android:onClick="clickEmployeeList"
+        android:orientation="horizontal">
+
+        <!--text within button-->
+        <TextView
+            android:layout_width="1dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="Employee List"
+            android:textColor="@color/eggshell"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="50dp"
+            android:src="@drawable/employee_icon" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/border_corn120"
+        android:onClick="clickSchedule"
+        android:orientation="horizontal">
+
+        <!--text within button-->
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="Full Schedule"
+            android:textColor="@color/eggshell"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="50dp"
+            android:src="@drawable/calender_icon" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="46dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/border_corn120"
+        android:onClick="clickSettings"
+        android:orientation="horizontal">
+
+        <!--text within button-->
+        <TextView
+            android:layout_width="390dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_weight="1"
+            android:padding="12dp"
+            android:text="Settings"
+            android:textColor="@color/eggshell"
+            android:textSize="17dp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="50dp"
+            app:srcCompat="@drawable/settings_icon" />
+
+    </LinearLayout>
+
+
+</LinearLayout>

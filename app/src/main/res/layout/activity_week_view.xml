@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/eggshell"
+    tools:context=".WeekView">
+    <!--Linear layout is for th orientation of things such as the menu bar will
+    be vertical, the title horizontal
+
+    this is for the menu toolbar aka nav bar-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!--this is for the tool bar connected to main_toolbar.xml-->
+        <include layout="@layout/main_toolbar" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Weekly View"
+            android:textColor="@color/Cornflower120"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <!--        this constraint is to make it easier to move and edit assests -->
+        <!--        on the page-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <!--            these 2 buttons are to switch to the next or previous-->
+            <!--            week connected to recycler view-->
+            <Button
+                android:id="@+id/previousWeekbutton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="4dp"
+                android:onClick="previousWeekAction"
+                android:text="Prev"
+                app:layout_constraintEnd_toStartOf="@+id/monthDayTv"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/nextWeekButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:onClick="nextWeekAction"
+                android:text="Next"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/monthDayTv"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:layout_editor_absoluteX="307dp"
+                tools:layout_editor_absoluteY="7dp" />
+
+            <!--            This is for displaying the month and year it is-->
+            <TextView
+                android:id="@+id/monthOfWeek"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
+                android:text="Oct  2022"
+                android:textColor="@color/Cornflower120"
+                android:textSize="25sp"
+                app:layout_constraintEnd_toStartOf="@+id/nextWeekButton"
+                app:layout_constraintStart_toEndOf="@+id/previousWeekbutton"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--            this is for the week day names in a row sunday to saturday-->
+            <LinearLayout
+                android:id="@+id/weekDayNames"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/monthOfWeek">
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Sun"
+                    android:textColor="@color/Cornflower120"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Mon"
+                    android:textColor="@color/Cornflower120"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Tue"
+                    android:textColor="@color/Cornflower120"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Wed"
+                    android:textColor="@color/Cornflower120"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Thu"
+                    android:textColor="@color/Cornflower120"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Fri"
+                    android:textColor="@color/Cornflower120"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5sp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Sat"
+                    android:textColor="@color/Cornflower120"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!--            this is for the days of week view its a recycler so that it can move -->
+            <!--            to the next day-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/calendarRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weekDayNames"
+                app:layout_constraintVertical_bias="0.0">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+
+            <!--            This is for the daily  view for each Week day having 2 shifts-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/weekDayWeekView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="visible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/calendarRecyclerView"
+                tools:visibility="visible">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/morningbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/caldroid_lighter_gray"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/morningWarn"
+                        android:layout_width="37dp"
+                        android:layout_height="35dp"
+                        android:onClick="clickErrorMorning"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/warning_icon" />
+
+                    <TextView
+                        android:id="@+id/morningError_TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="93dp"
+                        android:layout_marginBottom="9dp"
+                        android:onClick="clickErrorMorning"
+                        android:text="See Error(s)"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/morningShiftsunWeek"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/morningWarn" />
+
+                    <ImageView
+                        android:id="@+id/morningShiftsunWeek"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_sun" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/mornShiftBlockWeekDay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/morningbar">
+
+                    <Spinner
+                        android:id="@+id/mornEmploy1WeekDay"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/border_spinner"
+                        android:foreground="@drawable/ic_baseline_arrow_drop_down_24"
+                        android:foregroundGravity="center|right"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <Spinner
+                        android:id="@+id/mornEmploy2WeekDay"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/border_spinner"
+                        android:foreground="@drawable/ic_baseline_arrow_drop_down_24"
+                        android:foregroundGravity="center|right"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <Spinner
+                        android:id="@+id/mornEmploy3WeekDay"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/border_spinner"
+                        android:foreground="@drawable/ic_baseline_arrow_drop_down_24"
+                        android:foregroundGravity="center|right"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/eveningBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/caldroid_lighter_gray"
+                    app:layout_constraintTop_toBottomOf="@id/mornShiftBlockWeekDay">
+
+                    <ImageView
+                        android:id="@+id/eveningWarn"
+                        android:layout_width="37dp"
+                        android:layout_height="35dp"
+                        android:onClick="clickErrorEvening"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/warning_icon" />
+
+                    <TextView
+                        android:id="@+id/eveningError_TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="93dp"
+                        android:layout_marginBottom="8dp"
+                        android:onClick="clickErrorEvening"
+                        android:text="See Error(s)"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/eveningShiftMoonWeekDay"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/eveningWarn" />
+
+                    <ImageView
+                        android:id="@+id/eveningShiftMoonWeekDay"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_moon" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/evenShiftBlockWeek"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/eveningBar">
+
+                    <Spinner
+                        android:id="@+id/evenemploy1Week"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/border_spinner"
+                        android:foreground="@drawable/ic_baseline_arrow_drop_down_24"
+                        android:foregroundGravity="center|right"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <Spinner
+                        android:id="@+id/evenemploy2Week"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/border_spinner"
+                        android:foreground="@drawable/ic_baseline_arrow_drop_down_24"
+                        android:foregroundGravity="center|right"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+
+                        />
+
+                    <Spinner
+                        android:id="@+id/evenemploy3Week"
+                        android:layout_width="match_parent"
+                        android:layout_height="28dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/border_spinner"
+                        android:foreground="@drawable/ic_baseline_arrow_drop_down_24"
+                        android:foregroundGravity="center|right"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!--            This is for the Weekend employee view-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/weekEndWeekView"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/calendarRecyclerView"
+                tools:visibility="gone">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/weekendAllDayIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:background="@color/caldroid_lighter_gray"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/allDayWarn"
+                        android:layout_width="37dp"
+                        android:layout_height="35dp"
+                        android:onClick="clickErrorWeekend"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/warning_icon" />
+
+                    <TextView
+                        android:id="@+id/allDayError_TextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="93dp"
+                        android:layout_marginBottom="9dp"
+                        android:onClick="clickErrorWeekend"
+                        android:text="See Error(s)"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/allDayWarn" />
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/morningShiftsunWeekEnd"
+                            android:layout_width="38dp"
+                            android:layout_height="34dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/weekEndWeekView"
+                            app:srcCompat="@drawable/ic_sun" />
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="38dp"
+                            android:layout_height="34dp"
+                            app:srcCompat="@drawable/ic_grey_add" />
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="38dp"
+                            android:layout_height="34dp"
+                            app:srcCompat="@drawable/ic_moon" />
+                    </LinearLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:id="@+id/WeekendEmployeeView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/weekendAllDayIcon">
+
+                    <Spinner
+                        android:id="@+id/employ1Weekend"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                    <Spinner
+                        android:id="@+id/employ2Weekend"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp"
+
+                        />
+
+                    <Spinner
+                        android:id="@+id/employ3Weekend"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:textColor="@color/black"
+                        android:textSize="15sp" />
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <CheckBox
+                android:id="@+id/busycheckBox"
+                android:layout_width="96dp"
+                android:layout_height="38dp"
+                android:buttonTint="@color/Cornflower"
+                android:checked="true"
+                android:onClick="busyDayClick"
+                android:text="Busy"
+                android:textColor="@color/Cornflower"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/calendarRecyclerView" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingHorizontal="5dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:dividerPadding="5dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/monthlyView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_gravity="left"
+                android:layout_marginEnd="7dp"
+                android:onClick="monthlyViewClick"
+                android:text="Monthly" />
+
+
+            <Button
+                android:id="@+id/AutoScheduleButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:layout_weight="1"
+                android:onClick="clickScheduleMonth"
+                android:text="Schedule Month"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/weeklyStatsButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="7dp"
+                android:layout_gravity="end"
+                android:onClick="weeklyStatsViewClick"
+                android:text="Analytics" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <include layout="@layout/main_nav_drawer" />
+
+    </RelativeLayout>
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/eggshell"
+    tools:context=".EditEmployee">
+
+    <TextView
+        android:id="@+id/editEmployeeTitleTextView"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="105dp"
+        android:layout_marginEnd="105dp"
+        android:layout_marginBottom="0dp"
+        android:text="Edit Employee"
+        android:textAlignment="center"
+        android:textColor="@color/Cornflower"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editEmployeeNameEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editEmployeeNameEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="0dp"
+        android:ems="10"
+        android:hint="Name (John Doe)"
+        android:inputType="textPersonName"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editEmployeePrimaryMailEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeTitleTextView" />
+
+    <EditText
+        android:id="@+id/editEmployeePrimaryMailEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="0dp"
+        android:ems="10"
+        android:hint=" Primary Email (johndoe@gmail.com)"
+        android:inputType="textEmailAddress"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editEmployeeSecondaryMailEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeNameEditText" />
+
+    <EditText
+        android:id="@+id/editEmployeeSecondaryMailEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="0dp"
+        android:ems="10"
+        android:hint="Secondary Email (Optional)"
+        android:inputType="textEmailAddress"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editEmployeePrimaryPhoneEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeePrimaryMailEditText" />
+
+    <EditText
+        android:id="@+id/editEmployeePrimaryPhoneEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="43dp"
+        android:layout_marginBottom="0dp"
+        android:ems="10"
+        android:hint="Primary Phone Number (123-456-7890)"
+        android:inputType="phone"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/editEmployeeSecondaryPhoneEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeSecondaryMailEditText" />
+
+    <EditText
+        android:id="@+id/editEmployeeSecondaryPhoneEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="43dp"
+        android:ems="10"
+        android:hint="Secondary Phone Number (Optional)"
+        android:inputType="phone"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeePrimaryPhoneEditText" />
+
+    <TextView
+        android:id="@+id/editTrainingTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Employee Training"
+        android:textColor="@color/Cornflower"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.07"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeSecondaryPhoneEditText" />
+
+    <CheckBox
+        android:id="@+id/editEmployeeCanOpenCheckBox"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="8dp"
+        android:text="Can Open"
+        android:textColor="@color/Cornflower120"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeCanCloseCheckBox"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTrainingTitle" />
+
+    <CheckBox
+        android:id="@+id/editEmployeeCanCloseCheckBox"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="106dp"
+        android:text="Can Close"
+        android:textColor="@color/Cornflower120"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeCanOpenCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/editTrainingTitle" />
+
+    <TextView
+        android:id="@+id/editEmployeeScheduleTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="0dp"
+        android:text="Schedule Availability"
+        android:textColor="@color/Cornflower"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeCanOpenCheckBox" />
+
+    <TextView
+        android:id="@+id/editEmployeeMondayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="2dp"
+        android:text="Mon"
+        android:textColor="@color/Cornflower"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeTuesdayTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeScheduleTextView" />
+
+    <TextView
+        android:id="@+id/editEmployeeTuesdayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="1dp"
+        android:text="Tue"
+        android:textColor="@color/Cornflower"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeWednesdayTextView"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeMondayTextView"
+        app:layout_constraintTop_toTopOf="@+id/editEmployeeMondayTextView" />
+
+    <TextView
+        android:id="@+id/editEmployeeWednesdayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wed"
+        android:textColor="@color/Cornflower"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeThursdayTextView"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeTuesdayTextView"
+        app:layout_constraintTop_toTopOf="@+id/editEmployeeTuesdayTextView" />
+
+    <TextView
+        android:id="@+id/editEmployeeThursdayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:text="Thu"
+        android:textColor="@color/Cornflower"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeFridayTextView"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeWednesdayTextView"
+        app:layout_constraintTop_toTopOf="@+id/editEmployeeWednesdayTextView" />
+
+    <TextView
+        android:id="@+id/editEmployeeFridayTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="26dp"
+        android:text="Fri"
+        android:textColor="@color/Cornflower"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editEmployeeThursdayTextView" />
+
+    <ImageView
+        android:id="@+id/editEmployeeSunMonring"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/editEmployeeMoonEvening"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeAvailabilityChipMondayMorning"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeScheduleTextView"
+        app:srcCompat="@drawable/ic_sun" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/editEmployeeAvailabilityChipMondayMorning"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:checkable="true"
+        app:chipBackgroundColor="@color/Cornflower"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeAvailabilityChipTuesdayMorning"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeSunMonring"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeMondayTextView" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/editEmployeeAvailabilityChipTuesdayMorning"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:checkable="true"
+        app:chipBackgroundColor="@color/Cornflower"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeAvailabilityChipWednesdayMorning"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeAvailabilityChipMondayMorning"
+        app:layout_constraintTop_toTopOf="@+id/editEmployeeAvailabilityChipMondayMorning" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/editEmployeeAvailabilityChipWednesdayMorning"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:checkable="true"
+        app:chipBackgroundColor="@color/Cornflower"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeAvailabilityChipThursdayMorning"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeAvailabilityChipTuesdayMorning"
+        app:layout_constraintTop_toTopOf="@+id/editEmployeeAvailabilityChipTuesdayMorning" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/editEmployeeAvailabilityChipThursdayMorning"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp"
+        android:checkable="true"
+        app:chipBackgroundColor="@color/Cornflower"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeAvailabilityChipFridayMorning"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeAvailabilityChipWednesdayMorning"
+        app:layout_constraintTop_toTopOf="@+id/editEmployeeAvailabilityChipWednesdayMorning" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/editEmployeeAvailabilityChipFridayMorning"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="8dp"
+        android:checkable="true"
+        app:chipBackgroundColor="@color/Cornflower"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeAvailabilityChipThursdayMorning"
+        app:layout_constraintTop_toTopOf="@+id/editEmployeeAvailabilityChipThursdayMorning" />
+
+    <ImageView
+        android:id="@+id/editEmployeeMoonEvening"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeAvailabilityChipMondayEvening"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeSunMonring"
+        app:srcCompat="@drawable/ic_moon" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/editEmployeeAvailabilityChipMondayEvening"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:checkable="true"
+        app:chipBackgroundColor="@color/Cornflower"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeAvailabilityChipTuesdayEvening"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeMoonEvening"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeAvailabilityChipMondayMorning" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/editEmployeeAvailabilityChipTuesdayEvening"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:checkable="true"
+        app:chipBackgroundColor="@color/Cornflower"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeAvailabilityChipWednesdayEvening"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeAvailabilityChipMondayEvening"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeAvailabilityChipTuesdayMorning" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/editEmployeeAvailabilityChipWednesdayEvening"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:checkable="true"
+        app:chipBackgroundColor="@color/Cornflower"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeAvailabilityChipThursdayEvening"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeAvailabilityChipTuesdayEvening"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeAvailabilityChipWednesdayMorning" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/editEmployeeAvailabilityChipThursdayEvening"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:checkable="true"
+        app:chipBackgroundColor="@color/Cornflower"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeAvailabilityChipFridayEvening"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeAvailabilityChipWednesdayEvening"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeAvailabilityChipThursdayMorning" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/editEmployeeAvailabilityChipFridayEvening"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:checkable="true"
+        app:chipBackgroundColor="@color/Cornflower"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeAvailabilityChipThursdayEvening"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeAvailabilityChipFridayMorning" />
+
+    <TextView
+        android:id="@+id/editEmployeeSaturadayAllTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="148dp"
+        android:layout_marginTop="0dp"
+        android:text="Sat"
+        android:textColor="@color/Cornflower"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeAvailabilityChipMondayEvening" />
+
+    <TextView
+        android:id="@+id/editEmployeeSundayAllTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="96dp"
+        android:text="Sun"
+        android:textColor="@color/Cornflower"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeAvailabilityChipTuesdayEvening" />
+
+    <ImageView
+        android:id="@+id/editEmployeeSunAll"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="23dp"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeePlusAll"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeMoonEvening"
+        app:srcCompat="@drawable/ic_sun" />
+
+    <ImageView
+        android:id="@+id/editEmployeePlusAll"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeMoonAll"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeSunAll"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeAvailabilityChipMondayEvening"
+        app:srcCompat="@drawable/ic_grey_add" />
+
+    <ImageView
+        android:id="@+id/editEmployeeMoonAll"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeePlusAll"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeAvailabilityChipMondayEvening"
+        app:srcCompat="@drawable/ic_moon" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/editEmployeeAvailabilityChipSaturdayAll"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="40dp"
+        android:checkable="true"
+        app:chipBackgroundColor="@color/Cornflower"
+        app:layout_constraintEnd_toStartOf="@+id/editEmployeeAvailabilityChipSundayAll"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeMoonAll"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeSaturadayAllTextView" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/editEmployeeAvailabilityChipSundayAll"
+        android:layout_width="60dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="79dp"
+        android:checkable="true"
+        app:chipBackgroundColor="@color/Cornflower"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editEmployeeAvailabilityChipSaturdayAll"
+        app:layout_constraintTop_toBottomOf="@+id/editEmployeeSundayAllTextView" />
+
+    <Button
+        android:id="@+id/canceleditingButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="cancelsaveEmployee"
+        android:text="Cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/finishsaveButton"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:onClick="saveEmployeeButton"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="Cornflower120">#627FA3</color>
+    <color name="Cornflower">#7D96C0</color>
+    <color name="Cornflower_80">#8aa0c6</color>
+    <color name="Cornflower_60">#97abcc</color>
+    <color name="amber">#F4B942</color>
+    <color name="amber_80">#f5c054</color>
+    <color name="amber_60">#f5c054</color>
+    <color name="eggshell">#FFFCF2</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="Unscheduled">#bfbfbf</color>
+    <color name="PartiallyScheduled">#ff952b</color>
+    <color name="Scheduled">#3380ff</color>
+</resources>
